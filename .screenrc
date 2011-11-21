@@ -1,0 +1,14 @@
+escape ^Zz
+startup_message off
+vbell off
+
+bind s
+bind w windowlist -b
+
+
+#defbce on
+#term xterm-256color
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+termcapinfo xterm* ti@:te@
+
+hardstatus alwayslastline "%-w%{= ck}%n %t%{-}%+w"
