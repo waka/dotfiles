@@ -1,4 +1,4 @@
-" 非互換モード
+"非互換モード
 set nocompatible
 
 set enc=utf-8
@@ -7,36 +7,36 @@ set fencs=ucs-bom,utf-8,iso-2022-jp,euc-jp,cp932
 set imi=0
 set ims=0
 
-" シンタックスカラー表示を有効にする
+"シンタックスカラー表示を有効にする
 syntax on
-" 行番号を表示する
+"行番号を表示する
 set number
-" 入力したコマンドをステータスラインに表示
+"入力したコマンドをステータスラインに表示
 set showcmd
-" 位置情報を表示
+"位置情報を表示
 set ruler
-" ステータスラインを表示
+"ステータスラインを表示
 set laststatus=2
 set statusline=%<%f\ %m%r%h%w%{'['.&fenc.']['.&ff.']'}%=%l,%c%V%8P
 
-" ファイルタイプごとのプラグインを有効にする
+"ファイルタイプごとのプラグインを有効にする
 filetype on
 filetype plugin on
 filetype indent on
 
-" 自動インデント
+"自動インデント
 set smartindent
-" 対応する括弧を強調表示
+"対応する括弧を強調表示
 set showmatch
 " 長い行を折り返さない
 "set nowrap
 " バックスペースの挙動
 set backspace=indent,eol,start
-" タブが対応する空白の数
+"タブが対応する空白の数
 set tabstop=2
 set shiftwidth=2
 set softtabstop=0
-" タブではなく適切な数の空白を使う
+"タブではなく適切な数の空白を使う
 set expandtab
 
 set modelines=0
@@ -69,57 +69,46 @@ set modifiable
 "set directory=$VIMRUNTIME\tmp
 "オートCD
 au BufEnter * execute ":lcd " . expand("%:p:h")
+"ペースト時にオートインデントを無効に 
+"set paste
+"タブラインを非表示
+set showtabline=0
 
-"taglist
-set tags=tags
-let g:tlist_javascript_settings = 'javascript;v:var;c:class;p:prototype;m:method;f:function;o:object'
 
-"fastladder.vim
-"let g:fastladder_server = 'http://reader.livedoor.com'
+"補完候補の色づけ for vim7
+hi Pmenu ctermbg=8
+hi PmenuSel ctermbg=12
+hi PmenuSbar ctermbg=0
 
-"neocomplcache
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_auto_completion_start_length = 2
-let g:neocomplcache_enable_auto_select = 1
-"Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-"Recommended key-mappings.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
-inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y> neocomplcache#close_popup()
-inoremap <expr><C-e> neocomplcache#cancel_popup()
-"Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+nnoremap <D-¥> \
 
-"minibuffer
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget=1
-let g:miniBufExplSplitToEdge=1
-" MiniBufExplorer で GNU screen likeなキーバインド
-let mapleader = ""
-nmap <S-Space> :MBEbp<CR>
-nmap <Space> :MBEbn<CR>
-nnoremap <C-X><C-N> :new<CR>
-nnoremap <C-X><C-K> :bd<CR>
-let mapleader = '\'
+"表示行単位で移動
+nnoremap j gj
+nnoremap k gk
 
-"changelog
-let g:changelog_timeformat = '%Y-%m-%d'
-let g:changelog_username = 'wakahara <y.wakahara@gmail.com>'
+"Encoding
+nmap ,U :set fileencoding=utf-8<CR>
+nmap ,E :set fileencoding=euc-jp<CR>
+nmap ,S :set fileencoding=cp932<CR>
+
+"Reload file with given encoding
+nmap =U :e ++enc=utf8<CR>
+nmap =S :e ++enc=sjis<CR>
+nmap =E :e ++enc=euc-jp<CR>
+nmap =J :e ++enc=iso-2022-jp<CR>
+
+"FileFormat
+nmap ,W :set ff=dos<CR>
+nmap ,L :set ff=unix<CR>
+
+"コマンドモードで Emacs キーバインド
+cmap <C-A> <Home>
+cmap <C-F> <Right>
+cmap <C-B> <Left>
+cmap <C-D> <Delete>
+cmap <Esc>b <S-Left>
+cmap <Esc>f <S-Right>
+
 
 "as3 syntax
 au BufNewFile,BufRead *.as    set ft=actionscript
@@ -134,71 +123,63 @@ au BufNewFile,BufRead *.pm    set shiftwidth=4 | set expandtab
 au BufNewFile,BufRead *.scala set ft=scala
 
 "javascript syntax
-au BufNewFile,BufRead *.js    set shiftwidth=4 | set expandtab
-au BufNewFile,BufRead *.htc   set shiftwidth=4 | set expandtab
-au BufNewFile,BufRead *.htc   set ft=javascript
+au BufNewFile,BufRead *.js    set shiftwidth=2 | set expandtab
 
 "html syntax
 au BufNewFile,BufRead *.html  set shiftwidth=2 | set expandtab
-au BufNewFile,BufRead *.mt    set ft=html
-au BufNewFile,BufRead *.ftl   set ft=html | set shiftwidth=2
 
 
-" 補完候補の色づけ for vim7
-hi Pmenu ctermbg=8
-hi PmenuSel ctermbg=12
-hi PmenuSbar ctermbg=0
-
-nnoremap <D-¥> \
-
-" 表示行単位で移動
-nnoremap j gj
-nnoremap k gk
-
-" encoding
-nmap ,U :set fileencoding=utf-8<CR>
-nmap ,E :set fileencoding=euc-jp<CR>
-nmap ,S :set fileencoding=cp932<CR>
-
-"reload file with given encoding
-nmap =U :e ++enc=utf8<CR>
-nmap =S :e ++enc=sjis<CR>
-nmap =E :e ++enc=euc-jp<CR>
-nmap =J :e ++enc=iso-2022-jp<CR>
-
-" format
-nmap ,W :set ff=dos<CR>
-nmap ,L :set ff=unix<CR>
-
-" font
-"set guifont=Osaka−等幅:h11
-
-" コマンドモードで Emacs キーバインド
-cmap <C-A> <Home>
-cmap <C-F> <Right>
-cmap <C-B> <Left>
-cmap <C-D> <Delete>
-cmap <Esc>b <S-Left>
-cmap <Esc>f <S-Right>
-
-" タブで、補完
-"imap <TAB> <C-X><C-O>
-
-" ペースト時にオートインデントを無効に 
-"set paste
-
-set showtabline=0
-
-" vimgdb
-":syntax enable			" enable syntax highlighting
-":set previewheight=12		" set gdb window initial height
-":run macros/gdb_mappings.vim	" source key mappings listed in this
-    				" document
-":set asm=0				" don't show any assembly stuff
-":set gdbprg=gdb		" set GDB invocation string (default 'gdb')
-
+" カラーテーマ, 256colors
 colorscheme railscasts
 set t_Co=256
+
+
+"Neocomplcache
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_auto_completion_start_length = 2
+let g:neocomplcache_enable_auto_select = 1
+""Plugin key-mappings.
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-l> neocomplcache#complete_common_string()
+""Recommended key-mappings.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
+inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplcache#close_popup()
+inoremap <expr><C-e> neocomplcache#cancel_popup()
+""Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+
+
+"MiniBufExplorer
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget=1
+let g:miniBufExplSplitToEdge=1
+""GNU screen likeなキーバインド
+let mapleader = ""
+nmap <S-Space> :MBEbp<CR>
+nmap <Space> :MBEbn<CR>
+nnoremap <C-X><C-N> :new<CR>
+nnoremap <C-X><C-K> :bd<CR>
+let mapleader = '\'
+
+
+"RagTag.vim
+let g:ragtag_global_maps = 1
+
+
 
 "デフォルトの設定
 set diffexpr=MyDiff()

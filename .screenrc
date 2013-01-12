@@ -1,14 +1,19 @@
+# globals
 escape ^Zz
+encoding utf-8
 startup_message off
 vbell off
 
+# keys
 bind s
 bind w windowlist -b
 
+# scroll
+defscrollback 10000
 
-#defbce on
-#term xterm-256color
+# 256 colors
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 termcapinfo xterm* ti@:te@
 
+# tab
 hardstatus alwayslastline "%-w%{= ck}%n %t%{-}%+w"
