@@ -62,6 +62,11 @@ setopt NO_beep
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 
+# lsの色設定
+export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+alias ls='ls -1 --color=auto'
+
+
 # java
 export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
 export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$JAVA_HOME/lib/tools.jar

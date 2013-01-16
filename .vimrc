@@ -242,6 +242,9 @@ au BufNewFile,BufRead *.rb       set shiftwidth=2 | set expandtab
 au BufNewFile,BufRead *.Gemfile  set ft=ruby | set shiftwidth=2 | set expandtab
 au BufNewFile,BufRead *.Rakefile set ft=ruby | set shiftwidth=2 | set expandtab
 
+"Markdown
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+
 
 "---------------
 " Neocomplcache
