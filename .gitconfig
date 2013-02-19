@@ -1,0 +1,7 @@
+[user]
+	name = yo_waka
+	email = y.wakahara@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim -c \"set fenc=utf-8\"

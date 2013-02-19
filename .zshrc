@@ -67,10 +67,6 @@ export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 alias ls='ls --color=auto'
 
 
-# java
-export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
-export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib:$JAVA_HOME/lib/tools.jar
-
 # ruby
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
