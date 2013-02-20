@@ -79,10 +79,10 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 
 # redis
-alias redis-server="/usr/local/redis/src/redis-server /usr/local/redis/redis.conf"
+alias redis-server="sudo /usr/local/redis/src/redis-server /usr/local/redis/redis.conf"
 
 # mongodb
-alias mongod="/usr/local/mongodb/bin/mongod -f /usr/local/mongodb/mongodb.conf"
+alias mongod="sudo /usr/local/mongodb/bin/mongod -f /usr/local/mongodb/mongodb.conf"
 
 
 if [ $TERM = "screen" ]; then
