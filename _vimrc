@@ -157,25 +157,6 @@ set wildmenu
 
 
 "---------------
-" カラーリング
-"---------------
-
-"256色を使う
-set t_Co=256
-
-"シンタックスカラー表示を有効にする
-syntax on
-
-"カラーテーマ
-colorscheme railscasts
-
-"補完候補の色づけ for vim7
-hi Pmenu ctermbg=8
-hi PmenuSel ctermbg=12
-hi PmenuSbar ctermbg=0
-
-
-"---------------
 " キーマップ
 "---------------
 
@@ -213,37 +194,77 @@ cmap <Esc>f <S-Right>
 " ファイルタイプ設定
 "---------------
 
-"ファイルタイプごとのプラグインを有効にする
-filetype on
-filetype plugin on
+augroup FileTypeDetect
+  autocmd!
+  autocmd BufRead,BufNewFile Capfile,Gemfile      setfiletype ruby
+  autocmd BufRead,BufNewFile *.json               setfiletype javascript
+  autocmd BufRead,BufNewFile *.coffee             setfiletype coffee
+  autocmd BufRead,BufNewFile *.md                 setfiletype markdown
+  autocmd BufRead,BufNewFile *.pp                 setfiletype puppet
+  autocmd BufRead,BufNewFile *.scss               setfiletype scss
+augroup END
+
+augroup FileTypePlugin
+  autocmd!
+  autocmd FileType int-pry    setlocal nonu
+  autocmd FileType int-python setlocal nonu
+  autocmd FileType java       setlocal ts=4 sts=4 sw=4
+  autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType ruby       setlocal ts=4 sts=4 sw=4
+  autocmd FileType python     setlocal ts=4 sts=4 sw=4 si cinw=if,elif,else,for,while,try,except,finally,def,class
+  autocmd FileType vim        setlocal ts=2 sts=2 sw=2
+  autocmd FileType html       setlocal ts=2 sts=2 sw=2
+  autocmd FileType scss       setlocal ts=2 sts=2 sw=2
+  autocmd FileType css        setlocal ts=2 sts=2 sw=2
+  autocmd FileType markdown   setlocal tw=0
+  autocmd FileType vimfiler   setlocal nonu
+  autocmd FileType vimshell   setlocal nonu
+augroup END
+
+
+"---------------
+" NeoBundle
+"---------------
+
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
+
+let g:neobundle_default_git_protocol='https'
+
+" originalrepos on github
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'tpope/vim-ragtag'
+NeoBundle 'Railscasts-Theme-GUIand256color'
+
+filetype plugin indent on
 filetype indent on
 
-"HTML
-au BufNewFile,BufRead *.html set shiftwidth=2 | set expandtab
 
-"CSS
-au BufNewFile,BufRead *.css  set shiftwidth=2 | set expandtab
-au BufNewFile,BufRead *.scss set shiftwidth=2 | set expandtab
+"---------------
+" カラーリング
+"---------------
 
-"JavaScript
-au BufNewFile,BufRead *.js     set shiftwidth=2 | set expandtab
-au BufNewFile,BufRead *.coffee set ft=javascript | set shiftwidth=2 | set expandtab
+"256色を使う
+set t_Co=256
 
-"ActionScript3
-au BufNewFile,BufRead *.as   set ft=actionscript | shiftwidth=4 | set expandtab
-au BufNewFile,BufRead *.mxml set ft=mxml
+"シンタックスカラー表示を有効にする
+syntax on
 
-"Perl
-au BufNewFile,BufRead *.pl set shiftwidth=4 | set expandtab
-au BufNewFile,BufRead *.pm set shiftwidth=4 | set expandtab
+"カラーテーマ
+colorscheme railscasts
 
-"Ruby
-au BufNewFile,BufRead *.rb       set shiftwidth=2 | set expandtab
-au BufNewFile,BufRead *.Gemfile  set ft=ruby | set shiftwidth=2 | set expandtab
-au BufNewFile,BufRead *.Rakefile set ft=ruby | set shiftwidth=2 | set expandtab
-
-"Markdown
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+"補完候補の色づけ for vim7
+hi Pmenu ctermbg=8
+hi PmenuSel ctermbg=12
+hi PmenuSbar ctermbg=0
 
 
 "---------------
@@ -272,11 +293,6 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup().”\<C-h>”
 inoremap <expr><BS>  neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> neocomplcache#close_popup()
 inoremap <expr><C-e> neocomplcache#cancel_popup()
-
-""Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 
 "---------------

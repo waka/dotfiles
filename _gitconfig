@@ -1,0 +1,17 @@
+[user]
+  name = yo_waka
+  email = y.wakahara@gmail.com
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[core]
+  editor = vim -c \"set fenc=utf-8\"
+[push]
+  default = current
+[github]
+  user = waka
+[web]
+  browser = open
