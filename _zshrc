@@ -69,6 +69,8 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
 
+# boxen
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 if [ $TERM = "screen" ]; then
   preexec() {
