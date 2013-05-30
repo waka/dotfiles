@@ -13,5 +13,8 @@
   default = current
 [github]
   user = waka
+  email = wakahara@c-fo.com
 [web]
   browser = open
+[credential]
+	helper = osxkeychain
