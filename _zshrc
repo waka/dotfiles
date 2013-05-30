@@ -14,6 +14,9 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '[%b]'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () {
+  if [ $TERM = "screen" ]; then
+    echo -ne "\ek$(basename $SHELL)\e\\"
+  fi
   psvar=()
   LANG=ja_JP.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
@@ -108,9 +111,9 @@ if [ $TERM = "screen" ]; then
   preexec() {
     echo -ne "\ek$1\e\\"
   }
-  precmd() {
-    echo -ne "\ek$(basename $SHELL)\e\\"
-  }
+#  precmd() {
+#    echo -ne "\ek$(basename $SHELL)\e\\"
+#  }
 fi
 
 # adhoc
