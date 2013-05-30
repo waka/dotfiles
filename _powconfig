@@ -1,0 +1,7 @@
+# pow
+export POW_TIMEOUT=300
+export POW_WORKERS=2
+
+# apps
+eval "$(rbenv init -)"
+export DYLD_LIBRARY_PATH=/usr/local/mysql-5.5/lib:$DYLD_LIBRARY_PATH
