@@ -258,13 +258,19 @@ set t_Co=256
 "シンタックスカラー表示を有効にする
 syntax on
 
+"補完候補の色づけ for vim7
+"hi Pmenu ctermbg=8
+"hi PmenuSel ctermbg=12
+"hi PmenuSbar ctermbg=0
+
 "カラーテーマ
 colorscheme railscasts
 
 "補完候補の色づけ for vim7
-hi Pmenu ctermbg=8
-hi PmenuSel ctermbg=12
-hi PmenuSbar ctermbg=0
+hi Pmenu ctermbg=255 ctermfg=0 guifg=#000000 guibg=#999999
+hi PmenuSel ctermbg=blue ctermfg=black
+hi PmenuSbar ctermbg=0 ctermfg=9
+hi PmenuSbar ctermbg=255 ctermfg=0 guifg=#000000 guibg=#FFFFFF
 
 
 "---------------
