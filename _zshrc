@@ -91,30 +91,37 @@ alias java='java -Dfile.encoding=UTF-8'
 
 # rbenv
 eval "$(rbenv init -)"
+alias be='bundle exec'
 
 # nodenv
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # myqsl
 export PATH=/usr/local/mysql-5.5/bin:$PATH
-export DYLD_LIBRARY_PATH=/usr/local/mysql-5.5/lib:$DYLD_LIBRARY_PATH
 
 # redis
 export PATH=/usr/local/redis-2.6/bin:$PATH
 
-# nginx
-export DYLD_LIBRARY_PATH=/usr/local/opt/pcre/lib:$DYLD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$DYLD_LIBRARY_PATH
-export DYLD_LIBRARY_PATH=/usr/local/opt/zlib/lib:$DYLD_LIBRARY_PATH
+# mongodb
+export PATH=/usr/local/mongodb-2.4/bin:$PATH
 
+# phantomjs
+export PATH=/usr/local/phantomjs/bin:$PATH
+
+# screen
 if [ $TERM = "screen" ]; then
   preexec() {
     echo -ne "\ek$1\e\\"
   }
-#  precmd() {
-#    echo -ne "\ek$(basename $SHELL)\e\\"
-#  }
 fi
 
-# adhoc
-unset DYLD_LIBRARY_PATH
+# cdd
+if [ -f /usr/local/bin/cdd ]; then
+  source /usr/local/bin/cdd
+  chpwd() {
+    _cdd_chpwd
+  }
+fi
+
+# 環境ごと
+[ -f ~/.zshrc.private ] && source ~/.zshrc.private

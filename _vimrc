@@ -15,7 +15,7 @@ set imi=0
 set ims=0
 
 "クリップボードと同期を取る
-set clipboard+=unnamed
+set clipboard=unnamed
 
 
 "---------------
@@ -210,7 +210,7 @@ augroup FileTypePlugin
   autocmd FileType int-python setlocal nonu
   autocmd FileType java       setlocal ts=4 sts=4 sw=4
   autocmd FileType javascript setlocal ts=2 sts=2 sw=2
-  autocmd FileType ruby       setlocal ts=4 sts=4 sw=4
+  autocmd FileType ruby       setlocal ts=2 sts=2 sw=2
   autocmd FileType python     setlocal ts=4 sts=4 sw=4 si cinw=if,elif,else,for,while,try,except,finally,def,class
   autocmd FileType vim        setlocal ts=2 sts=2 sw=2
   autocmd FileType html       setlocal ts=2 sts=2 sw=2
@@ -243,6 +243,8 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'Railscasts-Theme-GUIand256color'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'osyo-manga/vim-sound'
 
 filetype plugin indent on
 filetype indent on
@@ -325,3 +327,9 @@ let mapleader = '\'
 "---------------
 
 let g:ragtag_global_maps = 1
+
+
+"---------------
+" VimSound
+"---------------
+

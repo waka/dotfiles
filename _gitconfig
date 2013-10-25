@@ -14,7 +14,6 @@
 [push]
   default = current
 [merge]
-  ff = false
 [pull]
   rebase = true
 [github]
