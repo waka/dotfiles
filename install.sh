@@ -2,25 +2,18 @@
 
 # make symbolic links
 
-link_file() {
-  source="${PWD}/$1"
-  target="${HOME}/${1/_/.}"
-
-  if [ -e $target ] ; then
-    if [ ! -d $target ] ; then
-      echo "Update\t$target"
-      mv $target $target.bak
-      ln -sf ${source} ${target}
+for name in *; do
+  target="$HOME/.$name"
+  if [ -e "$target" ]; then
+    if [ ! -L "$target" ]; then
+      echo "WARNING: $target exists but is not a symlink."
     fi
   else
-    echo "Install\t$target"
-    ln -sf ${source} ${target}
+    if [ "$name" != 'install.sh' ] && [ "$name" != 'README.md' ]; then
+      echo "Creating $target"
+      ln -s "$PWD/$name" "$target"
+    fi
   fi
-}
-
-for i in _*
-do
-  link_file $i
 done
 
 # Install NeoBundle
