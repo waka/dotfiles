@@ -14,6 +14,7 @@
 [push]
   default = current
 [merge]
+  ff = false
 [pull]
   rebase = true
 [github]
@@ -21,7 +22,7 @@
 [web]
   browser = google-chrome
 [credential]
-  helper = osxkeychain
+  helper = store
 [alias]
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
   b = branch -a

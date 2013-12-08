@@ -84,12 +84,14 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Colorize
 export ZLS_COLORS=$LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+alias ls='ls --color'
 
 # java
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
 
 # rbenv
+export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 alias be='bundle exec'
 
@@ -107,13 +109,6 @@ export PATH=/usr/local/mongodb-2.4/bin:$PATH
 
 # phantomjs
 export PATH=/usr/local/phantomjs/bin:$PATH
-
-# screen
-if [ $TERM = "screen" ]; then
-  preexec() {
-    echo -ne "\ek$1\e\\"
-  }
-fi
 
 # cdd
 if [ -f /usr/local/bin/cdd ]; then

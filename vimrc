@@ -244,7 +244,6 @@ NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'Railscasts-Theme-GUIand256color'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'osyo-manga/vim-sound'
 
 filetype plugin indent on
 filetype indent on
@@ -327,9 +326,3 @@ let mapleader = '\'
 "---------------
 
 let g:ragtag_global_maps = 1
-
-
-"---------------
-" VimSound
-"---------------
-
