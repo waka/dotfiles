@@ -99,16 +99,10 @@ alias be='bundle exec'
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # myqsl
-export PATH=/usr/local/mysql-5.5/bin:$PATH
+export PATH=/usr/local/mysql-5.6/bin:$PATH
 
 # redis
-export PATH=/usr/local/redis-2.6/bin:$PATH
-
-# mongodb
-export PATH=/usr/local/mongodb-2.4/bin:$PATH
-
-# phantomjs
-export PATH=/usr/local/phantomjs/bin:$PATH
+export PATH=/usr/local/redis-2.8/bin:$PATH
 
 # cdd
 if [ -f /usr/local/bin/cdd ]; then
