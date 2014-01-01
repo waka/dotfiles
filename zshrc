@@ -86,6 +86,9 @@ export ZLS_COLORS=$LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 alias ls='ls --color'
 
+# Use user local
+export PATH=/usr/local/bin:$PATH
+
 # java
 alias javac='javac -J-Dfile.encoding=UTF-8'
 alias java='java -Dfile.encoding=UTF-8'
