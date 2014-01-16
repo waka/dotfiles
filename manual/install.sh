@@ -24,3 +24,6 @@ if [ ! -d "$HOME/.nodebrew" ]; then
   nodebrew install-binary latest
   nodebrew use latest
 fi
+
+# mysql
+# https://gist.github.com/waka/8448846
