@@ -26,7 +26,7 @@ precmd () {
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
 # プロンプト表示形式
-PROMPT="%n%% "
+PROMPT='%(5~,%-2~/.../%2~,%~)%# '
 
 # Emacsキーバインド
 bindkey -e
@@ -84,7 +84,14 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Colorize
 export ZLS_COLORS=$LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-alias ls='ls --color'
+case "${OSTYPE}" in
+  darwin*)
+    alias ls="ls -G"
+    ;;
+  linux*)
+    alias ls='ls --color'
+    ;;
+esac
 
 # Use user local
 export PATH=/usr/local/bin:$PATH
