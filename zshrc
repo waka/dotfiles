@@ -97,8 +97,8 @@ esac
 export PATH=/usr/local/bin:$PATH
 
 # java
-alias javac='javac -J-Dfile.encoding=UTF-8'
-alias java='java -Dfile.encoding=UTF-8'
+#alias javac='javac -J-Dfile.encoding=UTF-8'
+#alias java='java -Dfile.encoding=UTF-8'
 
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH

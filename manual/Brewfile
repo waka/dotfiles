@@ -11,10 +11,10 @@
 
 
 # Make sure using latest Homebrew
-update
+update || true
 
 # Update already-installed formula
-upgrade
+upgrade || true
 
 # Add Repository
 #tap homebrew/versions || true
@@ -22,26 +22,27 @@ tap phinze/homebrew-cask || true
 tap homebrew/binary || true
 
 # Packages for develop
-install zsh
-install git
-install tig
-install vim
-#install docker
+install zsh || true
+install git || true
+install tig || true
+install vim || true
 
 # Packages for ruby
-install openssl
-install readline
+install openssl || true
+install readline || true
 
 # Packages for brew-cask
-install brew-cask
+install brew-cask || true
 
 # .dmg from brew-cask
-cask install google-chrome
-cask install virtualbox
-cask install vagrant
-#cask install keyremap4macbook
-#cask install hipchat
-#cask install macvim
+cask install google-chrome || true
+cask install iterm2 || true
+cask install virtualbox || true
+cask install vagrant || true
+cask install keyremap4macbook || true
+cask install hipchat || true
+cask install macvim || true
+cask install alfred || true
 
 # Remove outdated versions
 cleanup
