@@ -96,10 +96,6 @@ esac
 # Use user local
 export PATH=/usr/local/bin:$PATH
 
-# java
-#alias javac='javac -J-Dfile.encoding=UTF-8'
-#alias java='java -Dfile.encoding=UTF-8'
-
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
@@ -107,12 +103,6 @@ alias be='bundle exec'
 
 # nodenv
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# myqsl
-export PATH=/usr/local/mysql-5.6/bin:$PATH
-
-# redis
-export PATH=/usr/local/redis-2.8/bin:$PATH
 
 # cdd
 if [ -f /usr/local/bin/cdd ]; then
