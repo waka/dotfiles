@@ -18,7 +18,7 @@ upgrade || true
 
 # Add Repository
 #tap homebrew/versions || true
-tap phinze/homebrew-cask || true
+tap caskroom/cask || true
 tap homebrew/binary || true
 
 # Packages for develop
