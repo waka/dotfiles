@@ -18,8 +18,8 @@ upgrade || true
 
 # Add Repository
 #tap homebrew/versions || true
-tap caskroom/cask || true
 tap homebrew/binary || true
+tap caskroom/cask || true
 
 # Packages for develop
 install zsh || true
