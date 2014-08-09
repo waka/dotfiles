@@ -7,6 +7,7 @@ colors
 
 # git
 autoload -Uz vcs_info
+setopt prompt_subst
 
 # 表示フォーマットの指定
 # %b ブランチ情報
@@ -19,7 +20,6 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () {
   vcs_info
 }
-
 # バージョン管理されているディレクトリにいれば表示，そうでなければ非表示
 RPROMPT='${vcs_info_msg_0_}'
 
