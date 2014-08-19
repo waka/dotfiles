@@ -11,6 +11,7 @@
 #   brew bundle
 #
 
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 
 # Make sure using latest Homebrew
 brew update || true
