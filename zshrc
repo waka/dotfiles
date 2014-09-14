@@ -7,26 +7,24 @@ colors
 
 # git
 autoload -Uz vcs_info
+setopt prompt_subst
 
 # 表示フォーマットの指定
 # %b ブランチ情報
 # %a アクション名(mergeなど)
-zstyle ':vcs_info:*' formats '[%b]'
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () {
-  if [ $TERM = "screen" ]; then
-    echo -ne "\ek$(basename $SHELL)\e\\"
-  fi
-  psvar=()
-  LANG=ja_JP.UTF-8 vcs_info
-  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+  vcs_info
 }
-
 # バージョン管理されているディレクトリにいれば表示，そうでなければ非表示
-RPROMPT="%1(v|%F{green}%1v%f|)"
+RPROMPT='${vcs_info_msg_0_}'
 
 # プロンプト表示形式
-PROMPT="%n%% "
+PROMPT='%(5~,%-2~/.../%2~,%~)%# '
 
 # Emacsキーバインド
 bindkey -e
@@ -84,11 +82,17 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Colorize
 export ZLS_COLORS=$LS_COLORS
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-alias ls='ls --color'
+case "${OSTYPE}" in
+  darwin*)
+    alias ls="ls -G"
+    ;;
+  linux*)
+    alias ls='ls --color'
+    ;;
+esac
 
-# java
-alias javac='javac -J-Dfile.encoding=UTF-8'
-alias java='java -Dfile.encoding=UTF-8'
+# Use user local
+export PATH=/usr/local/bin:$PATH
 
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
@@ -97,12 +101,6 @@ alias be='bundle exec'
 
 # nodenv
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# myqsl
-export PATH=/usr/local/mysql-5.6/bin:$PATH
-
-# redis
-export PATH=/usr/local/redis-2.8/bin:$PATH
 
 # cdd
 if [ -f /usr/local/bin/cdd ]; then

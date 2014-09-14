@@ -45,3 +45,6 @@
   s = status --short --branch
   st = status 
   su = submodule update
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f

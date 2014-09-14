@@ -239,7 +239,7 @@ let g:neobundle_default_git_protocol='https'
 
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'fholgado/minibufexpl.vim'
@@ -330,3 +330,4 @@ nmap <C-p> : MBEbp<CR>
 "---------------
 
 let g:ragtag_global_maps = 1
+
