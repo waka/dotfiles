@@ -201,6 +201,7 @@ augroup FileTypeDetect
   autocmd BufRead,BufNewFile *.coffee             setfiletype coffee
   autocmd BufRead,BufNewFile *.md                 setfiletype markdown
   autocmd BufRead,BufNewFile *.pp                 setfiletype puppet
+  autocmd BufRead,BufNewFile *.slim               setfiletype slim
   autocmd BufRead,BufNewFile *.scss               setfiletype scss
 augroup END
 
@@ -214,6 +215,7 @@ augroup FileTypePlugin
   autocmd FileType python     setlocal ts=4 sts=4 sw=4 si cinw=if,elif,else,for,while,try,except,finally,def,class
   autocmd FileType vim        setlocal ts=2 sts=2 sw=2
   autocmd FileType html       setlocal ts=2 sts=2 sw=2
+  autocmd FileType slim       setlocal ts=2 sts=2 sw=2
   autocmd FileType scss       setlocal ts=2 sts=2 sw=2
   autocmd FileType css        setlocal ts=2 sts=2 sw=2
   autocmd FileType markdown   setlocal tw=0

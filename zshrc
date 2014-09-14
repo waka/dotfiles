@@ -114,3 +114,6 @@ fi
 
 # 環境ごと
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
+
+# added by travis gem
+[ -f /home/vagrant/.travis/travis.sh ] && source /home/vagrant/.travis/travis.sh
