@@ -210,7 +210,7 @@ augroup FileTypePlugin
   autocmd FileType int-pry    setlocal nonu
   autocmd FileType int-python setlocal nonu
   autocmd FileType java       setlocal ts=4 sts=4 sw=4
-  autocmd FileType javascript setlocal ts=2 sts=2 sw=2
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4
   autocmd FileType ruby       setlocal ts=2 sts=2 sw=2
   autocmd FileType python     setlocal ts=4 sts=4 sw=4 si cinw=if,elif,else,for,while,try,except,finally,def,class
   autocmd FileType vim        setlocal ts=2 sts=2 sw=2
