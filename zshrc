@@ -102,6 +102,17 @@ alias be='bundle exec'
 # nodenv
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# go
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# peco
+for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
+bindkey '^r' peco-select-history
+bindkey '^@' peco-cdr
+alias -g B='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
+
 # cdd
 if [ -f /usr/local/bin/cdd ]; then
   source /usr/local/bin/cdd
