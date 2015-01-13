@@ -49,3 +49,4 @@ brew cask install alfred || true
 
 # Remove outdated versions
 brew cleanup
+brew cask cleanup
