@@ -46,6 +46,7 @@ brew cask install karabiner || true
 brew cask install hipchat || true
 brew cask install macvim || true
 brew cask install alfred || true
+brew cask install atom || true
 
 # Remove outdated versions
 brew cleanup
