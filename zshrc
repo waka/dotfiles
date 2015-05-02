@@ -97,7 +97,7 @@ export PATH=/usr/local/bin:$PATH
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
-alias be='bundle exec'
+export PATH=$HOME/.rbenv/shims:$PATH
 
 # nodenv
 export PATH=$HOME/.nodebrew/current/bin:$PATH
