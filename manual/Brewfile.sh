@@ -47,6 +47,7 @@ brew cask install hipchat || true
 brew cask install macvim || true
 brew cask install alfred || true
 brew cask install atom || true
+brew cask install kindle || true
 
 # Remove outdated versions
 brew cleanup
