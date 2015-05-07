@@ -29,6 +29,7 @@ brew install zsh || true
 brew install git || true
 brew install tig || true
 brew install vim || true
+brew install tmux || true
 
 # Packages for ruby
 brew install openssl || true
