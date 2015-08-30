@@ -44,10 +44,8 @@ brew cask install iterm2 || true
 brew cask install virtualbox || true
 brew cask install vagrant || true
 brew cask install karabiner || true
-brew cask install hipchat || true
 brew cask install macvim || true
 brew cask install alfred || true
-brew cask install atom || true
 brew cask install kindle || true
 
 # Remove outdated versions

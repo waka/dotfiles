@@ -246,6 +246,7 @@ NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'Railscasts-Theme-GUIand256color'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'elixir-lang/vim-elixir'
 
 filetype plugin indent on
 filetype indent on
