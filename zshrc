@@ -31,8 +31,8 @@ bindkey -e
 
 # 履歴
 HISTFILE=$HOME/.zsh-history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=3000
+SAVEHIST=3000
 
 # 複数の zsh を同時に使う時など history ファイルに上書きせず追加する
 setopt append_history
