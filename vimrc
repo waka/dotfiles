@@ -221,6 +221,9 @@ augroup FileTypePlugin
   autocmd FileType markdown   setlocal tw=0
   autocmd FileType vimfiler   setlocal nonu
   autocmd FileType vimshell   setlocal nonu
+  autocmd FileType go         setlocal noexpandtab tabstop=4 shiftwidth=4
+  autocmd FileType go         :highlight goErr cterm=bold ctermfg=214
+  autocmd FileType go         :match goErr /\<err\>/
 augroup END
 
 
@@ -231,23 +234,33 @@ augroup END
 filetype off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  if &compatible
+    set nocompatible
+  endif
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 let g:neobundle_default_git_protocol='https'
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " originalrepos on github
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'fholgado/minibufexpl.vim'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'Railscasts-Theme-GUIand256color'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'vim-jp/vim-go-extra'
+
+call neobundle#end() 
 
 filetype plugin indent on
 filetype indent on
@@ -332,4 +345,12 @@ nmap <C-p> : MBEbp<CR>
 "---------------
 
 let g:ragtag_global_maps = 1
+
+
+"---------------
+" Vim Go Extra
+"---------------
+
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
+autocmd FileType go autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 

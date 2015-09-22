@@ -103,9 +103,8 @@ export PATH=$HOME/.rbenv/shims:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # go
-export GOROOT=/usr/local/go
 export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
 # peco
 for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
