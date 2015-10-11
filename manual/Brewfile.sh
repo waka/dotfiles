@@ -30,6 +30,7 @@ brew install git || true
 brew install tig || true
 brew install vim || true
 brew install tmux || true
+brew install ag || true
 
 # Packages for ruby
 brew install openssl || true
