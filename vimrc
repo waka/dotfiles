@@ -114,7 +114,7 @@ set modifiable
 set hidden
 
 "オートCD
-au BufEnter * execute ":lcd " . expand("%:p:h")
+"au BufEnter * execute ":lcd " . expand("%:p:h")
 
 
 
@@ -354,3 +354,31 @@ let g:ragtag_global_maps = 1
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
+
+"---------------
+" Unite.vim
+"---------------
+
+"insert modeで開始
+let g:unite_enable_start_insert=1
+
+"大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+
+"ファイル検索
+nnoremap <silent> ,f  :<C-u>Unite file_rec/async<CR>
+
+"grep検索 = Unite grep:.
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+"grepにagをつかいます
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+" ,cで終了する
+au FileType unite nnoremap <silent> <buffer> ,c :q<CR>
+au FileType unite inoremap <silent> <buffer> ,c <ESC>:q<CR>
