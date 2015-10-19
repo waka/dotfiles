@@ -23,6 +23,7 @@ brew upgrade || true
 #tap homebrew/versions || true
 brew tap homebrew/binary || true
 brew tap caskroom/cask || true
+brew tap tkengo/highway || true
 
 # Packages for develop
 brew install zsh || true
@@ -30,7 +31,7 @@ brew install git || true
 brew install tig || true
 brew install vim || true
 brew install tmux || true
-brew install ag || true
+brew install highway || true
 
 # Packages for ruby
 brew install openssl || true

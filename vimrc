@@ -367,14 +367,14 @@ let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 
 "ファイル検索
-nnoremap <silent> ,f  :<C-u>Unite file_rec/async<CR>
+nnoremap <silent> ,f  :<C-u>Unite file_rec<CR>
 
 "grep検索 = Unite grep:.
 nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
-"grepにagをつかいます
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
+"grepにhighwayをつかいます
+if executable('hw')
+  let g:unite_source_grep_command = 'hw'
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
 endif
