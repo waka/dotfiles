@@ -61,6 +61,8 @@ set modelines=0
 "タブラインを非表示
 set showtabline=0
 
+"記号文字がずれる件
+set ambiwidth=double
 
 "---------------
 " 編集
@@ -382,3 +384,4 @@ endif
 " ,cで終了する
 au FileType unite nnoremap <silent> <buffer> ,c :q<CR>
 au FileType unite inoremap <silent> <buffer> ,c <ESC>:q<CR>
+
