@@ -23,6 +23,16 @@ precmd () {
 # バージョン管理されているディレクトリにいれば表示，そうでなければ非表示
 RPROMPT='${vcs_info_msg_0_}'
 
+# cdr, add-zsh-hook を有効にする
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+# cdr の設定
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 500
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
+zstyle ':chpwd:*' recent-dirs-pushd true
+
 # プロンプト表示形式
 PROMPT='%(5~,%-2~/.../%2~,%~)%# '
 
@@ -110,6 +120,7 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
 bindkey '^r' peco-select-history
 bindkey '^@' peco-cdr
+bindkey '^g' peco-find-file
 alias -g B='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
 
 # cdd
