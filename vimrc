@@ -251,16 +251,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'fholgado/minibufexpl.vim'
-NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'Railscasts-Theme-GUIand256color'
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'yuku-t/unite-git'
+NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'vim-jp/vim-go-extra'
 
 call neobundle#end() 
@@ -369,8 +368,8 @@ let g:unite_enable_start_insert=1
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 
-"ファイル検索
-nnoremap <silent> ,f  :<C-u>Unite file_rec<CR>
+"ファイル検索 (git ls-filesの結果のみ)
+nnoremap <silent> ,f  :<C-u>Unite git_cached<CR>
 
 "grep検索 = Unite grep:.
 nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
