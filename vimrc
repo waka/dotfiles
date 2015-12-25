@@ -259,8 +259,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'yuku-t/unite-git'
 NeoBundle 'tpope/vim-ragtag'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'vim-jp/vim-go-extra'
+NeoBundle 'rust-lang/rust.vim'
 
 call neobundle#end() 
 
@@ -358,11 +358,19 @@ autocmd FileType go autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwi
 
 
 "---------------
+" rust.vim
+"---------------
+
+let g:rustfmt_autosave = 1
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
+
+
+"---------------
 " Unite.vim
 "---------------
 
 "insert modeで開始
-let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert = 1
 
 "大文字小文字を区別しない
 let g:unite_enable_ignore_case = 1
