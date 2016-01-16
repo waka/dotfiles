@@ -30,7 +30,7 @@ add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-max 500
 zstyle ':chpwd:*' recent-dirs-default true
-zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/chpwd-recent-dirs"
+zstyle ':chpwd:*' recent-dirs-file "$HOME/.cache/shell/chpwd-recent-dirs"
 zstyle ':chpwd:*' recent-dirs-pushd true
 
 # プロンプト表示形式
@@ -120,7 +120,8 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
 bindkey '^r' peco-select-history
 bindkey '^@' peco-cdr
-bindkey '^g' peco-find-file
+bindkey '^f' peco-find-file
+bindkey '^g' peco-ghq
 alias -g B='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
 
 # cdd
