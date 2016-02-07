@@ -353,6 +353,7 @@ let g:ragtag_global_maps = 1
 " Vim Go Extra
 "---------------
 
+let g:gofmt_command = 'goimports'
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
 autocmd FileType go autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 

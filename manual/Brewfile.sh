@@ -42,6 +42,7 @@ brew install brew-cask || true
 
 # .dmg from brew-cask
 brew cask install google-chrome || true
+brew cask install google-drive || true
 brew cask install iterm2 || true
 brew cask install virtualbox || true
 brew cask install vagrant || true
