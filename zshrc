@@ -116,6 +116,10 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
+# rust
+export PATH=$PATH:/usr/local/rust/bin
+export DYLD_LIBRARY_PATH=/usr/local/rust/lib
+
 # peco
 for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
 bindkey '^r' peco-select-history
