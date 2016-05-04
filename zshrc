@@ -116,9 +116,10 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export GOPATH=$HOME/.go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin:$GOPATH/bin
 
-# rust
-export PATH=$PATH:/usr/local/rust/bin
-export DYLD_LIBRARY_PATH=/usr/local/rust/lib
+# rustup
+export PATH=$HOME/.cargo/bin:$PATH
+# racer
+export RUST_SRC_PATH=$HOME/work/src/rustc-nightly/src
 
 # peco
 for f (~/.zsh/peco-sources/*) source "${f}" # load peco sources
