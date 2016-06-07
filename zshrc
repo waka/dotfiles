@@ -107,9 +107,8 @@ export PATH=/usr/local/bin:$PATH
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
-export PATH=$HOME/.rbenv/shims:$PATH
 
-# nodenv
+# nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # go
