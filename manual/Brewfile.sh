@@ -4,14 +4,9 @@
 # Install Homebrew
 #   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 #
-# Set brew-cask options
-#   export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
-#
 # Let's install softwares!
-#   brew bundle
+#   ./Brewfile.sh
 #
-
-export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
 
 # Make sure using latest Homebrew
 brew update || true
@@ -20,7 +15,6 @@ brew update || true
 brew upgrade || true
 
 # Add Repository
-#tap homebrew/versions || true
 brew tap homebrew/binary || true
 brew tap caskroom/cask || true
 brew tap tkengo/highway || true
@@ -36,9 +30,6 @@ brew install highway || true
 # Packages for ruby
 brew install openssl || true
 brew install readline || true
-
-# Packages for brew-cask
-brew install brew-cask || true
 
 # .dmg from brew-cask
 brew cask install google-chrome || true
