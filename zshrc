@@ -1,6 +1,6 @@
 # basic
 export LANG=ja_JP.UTF-8
-autoload -U compinit
+autoload -U compinit -C
 compinit -u
 autoload -U colors
 colors
@@ -106,7 +106,7 @@ export PATH=/usr/local/bin:$PATH
 
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+eval "$(rbenv init --no-rehash -)"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -127,14 +127,6 @@ bindkey '^@' peco-cdr
 bindkey '^f' peco-find-file
 bindkey '^g' peco-ghq
 alias -g B='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
-
-# cdd
-if [ -f /usr/local/bin/cdd ]; then
-  source /usr/local/bin/cdd
-  chpwd() {
-    _cdd_chpwd
-  }
-fi
 
 # 環境ごと
 [ -f ~/.zshrc.private ] && source ~/.zshrc.private
