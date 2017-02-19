@@ -230,39 +230,40 @@ augroup END
 
 
 "---------------
-" NeoBundle
+" dein.vim
 "---------------
 
-filetype off
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+if &compatible
+  set nocompatible " Be iMproved
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath+=/Users/yo_waka/.cache/dein/repos/github.com/Shougo/dein.vim
 
-let g:neobundle_default_git_protocol='https'
-NeoBundleFetch 'Shougo/neobundle.vim'
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
-" originalrepos on github
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Railscasts-Theme-GUIand256color'
-NeoBundle 'fholgado/minibufexpl.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'yuku-t/unite-git'
-NeoBundle 'tpope/vim-ragtag'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'vim-jp/vim-go-extra'
-NeoBundle 'rust-lang/rust.vim'
+  " Let dein manage dein
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-call neobundle#end() 
+  " Add or remove your plugins here:
+  call dein#add('Shougo/vimproc.vim')
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neocomplcache')
+  call dein#add('Railscasts-Theme-GUIand256color')
+  call dein#add('fholgado/minibufexpl.vim')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('tpope/vim-ragtag')
+  call dein#add('kchmck/vim-coffee-script')
+  call dein#add('vim-jp/vim-go-extra')
+  call dein#add('rust-lang/rust.vim')
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
 
 filetype plugin indent on
 filetype indent on
