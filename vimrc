@@ -191,6 +191,9 @@ cmap <C-D> <Delete>
 cmap <Esc>b <S-Left>
 cmap <Esc>f <S-Right>
 
+"ターミナルモードをESCで抜ける
+tnoremap <silent> <ESC> <C-\><C-n>
+
 
 "---------------
 " ファイルタイプ設定
@@ -246,15 +249,16 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/vimproc.vim')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/neocomplcache')
-  call dein#add('Railscasts-Theme-GUIand256color')
+  call dein#add('vim-scripts/Railscasts-Theme-GUIand256color')
   call dein#add('fholgado/minibufexpl.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tpope/vim-ragtag')
   call dein#add('kchmck/vim-coffee-script')
-  call dein#add('vim-jp/vim-go-extra')
+  call dein#add('fatih/vim-go')
+  call dein#add('jodosha/vim-godebug')
   call dein#add('rust-lang/rust.vim')
 
   call dein#end()
@@ -351,12 +355,13 @@ let g:ragtag_global_maps = 1
 
 
 "---------------
-" Vim Go Extra
+" Vim Go
 "---------------
 
-let g:gofmt_command = 'goimports'
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
-autocmd FileType go autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+let g:go_fmt_command = 'goimports'
+let g:go_get_update = 0
+autocmd FileType go autocmd BufWritePre <buffer> GoFmt
+"autocmd FileType go autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
 
 
 "---------------

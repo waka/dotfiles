@@ -18,12 +18,13 @@ brew upgrade || true
 brew tap homebrew/binary || true
 brew tap caskroom/cask || true
 brew tap tkengo/highway || true
+brew tap neovim/neovim || true
 
 # Packages for develop
 brew install zsh || true
 brew install git || true
 brew install tig || true
-brew install vim || true
+brew install neovim || true
 brew install tmux || true
 brew install highway || true
 

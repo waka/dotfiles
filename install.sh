@@ -16,9 +16,19 @@ for name in *; do
   fi
 done
 
-# Install NeoBundle
+# for nvim
 
-if [ ! -d $HOME/.vim/bundle/neobundle.vim ]
+if [ ! -d $HOME/.config/nvim ]
 then
-  git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
+  mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
+  ln -s $HOME/.vim $XDG_CONFIG_HOME/nvim
+  ln -s $HOME/.vimrc $XDG_CONFIG_HOME/nvim/init.vim
+fi
+
+# install dein.vim
+
+if [ ! -d $HOME/.cache/dein ]
+then
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > $HOME/.cache/dein/installer.sh
+  sh $HOME/.cache/dein/installer.sh $HOME/.cache/dein
 fi

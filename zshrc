@@ -104,6 +104,9 @@ esac
 # Use user local
 export PATH=/usr/local/bin:$PATH
 
+# nvim
+alias vim="nvim"
+
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init --no-rehash -)"
