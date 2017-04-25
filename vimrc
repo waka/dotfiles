@@ -15,7 +15,7 @@ set imi=0
 set ims=0
 
 "クリップボードと同期を取る
-set clipboard=unnamed
+set clipboard=unnamed,unnamedplus
 
 
 "---------------
@@ -240,7 +240,7 @@ if &compatible
   set nocompatible " Be iMproved
 endif
 
-set runtimepath+=/Users/yo_waka/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')

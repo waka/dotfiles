@@ -107,6 +107,9 @@ export PATH=/usr/local/bin:$PATH
 # nvim
 alias vim="nvim"
 
+# mysql
+export PATH=$PATH:/usr/local/opt/mysql@5.6/bin
+
 # rbenv
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init --no-rehash -)"
