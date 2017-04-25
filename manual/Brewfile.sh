@@ -21,7 +21,7 @@ brew tap tkengo/highway || true
 brew tap neovim/neovim || true
 
 # Packages for develop
-brew install zsh || true
+brew install fish || true
 brew install git || true
 brew install tig || true
 brew install neovim || true
