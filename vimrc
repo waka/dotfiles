@@ -15,7 +15,7 @@ set imi=0
 set ims=0
 
 "クリップボードと同期を取る
-set clipboard=unnamed
+set clipboard=unnamed,unnamedplus
 
 
 "---------------
