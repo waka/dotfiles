@@ -21,12 +21,13 @@ brew tap tkengo/highway || true
 brew tap neovim/neovim || true
 
 # Packages for develop
-brew install zsh || true
+brew install fish || true
 brew install git || true
 brew install tig || true
 brew install neovim || true
 brew install tmux || true
 brew install highway || true
+brew install fzf || true
 
 # Packages for ruby
 brew install openssl || true
@@ -37,8 +38,6 @@ brew cask install google-chrome || true
 brew cask install google-drive || true
 brew cask install iterm2 || true
 brew cask install virtualbox || true
-brew cask uninstall --force virtualbox && brew cask install virtualbox
-brew cask uninstall --force vagrant && brew cask install vagrant
 brew cask install karabiner || true
 brew cask install macvim || true
 brew cask install alfred || true

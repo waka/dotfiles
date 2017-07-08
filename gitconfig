@@ -45,9 +45,11 @@
   s = status --short --branch
   st = status 
   su = submodule update
+  pr = "!f(){ git fetch origin pull/$1/head:$1; git checkout $1; };f"
+  upr = "!f(){ git fetch upstream pull/$1/head:$1; git checkout $1; };f"
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
 [ghq]
-  root = ~/.go/src
+  root = ~/go/src
   root = ~/work/src
