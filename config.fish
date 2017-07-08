@@ -5,6 +5,7 @@
 # global
 set -x TERM xterm-256color
 set -x PATH /usr/local/bin $PATH
+export EDITOR=vim
 
 # rbenv
 set -x PATH $HOME/.rbenv/bin $PATH
@@ -24,7 +25,6 @@ set -x RUST_SRC_PATH $HOME/work/src/rustc-nightly/src
 # private env
 if test -f $HOME/.env_private.fish
   source $HOME/.env_private.fish
-  echo "loaded private env"
 end
 
 ##########
@@ -39,4 +39,6 @@ set -U FZF_TMUX 1
 
 alias vim nvim
 alias ls "ls -G"
-
+alias gc "git branch | fzf | xargs git checkout"
+alias gd "git branch | fzf | xargs git branch -D"
+alias gp "git branch | fzf | xargs git push origin"
