@@ -15,7 +15,7 @@ brew update || true
 brew upgrade || true
 
 # Add Repository
-brew tap homebrew/binary || true
+brew tap homebrew/core || true
 brew tap caskroom/cask || true
 brew tap tkengo/highway || true
 brew tap neovim/neovim || true
@@ -35,14 +35,13 @@ brew install readline || true
 
 # .dmg from brew-cask
 brew cask install google-chrome || true
-brew cask install google-drive || true
+brew cask install google-backup-and-sync || true
 brew cask install iterm2 || true
 brew cask install virtualbox || true
-brew cask install karabiner || true
+brew cask install karabiner-elements || true
 brew cask install macvim || true
 brew cask install alfred || true
 brew cask install kindle || true
 
 # Remove outdated versions
-brew cleanup
-brew cask cleanup
+#brew cleanup

@@ -246,13 +246,12 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
   " Let dein manage dein
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('Shougo/unite.vim')
   call dein#add('Shougo/neocomplcache')
-  call dein#add('vim-scripts/Railscasts-Theme-GUIand256color')
   call dein#add('fholgado/minibufexpl.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tpope/vim-ragtag')
@@ -260,6 +259,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('fatih/vim-go')
   call dein#add('jodosha/vim-godebug')
   call dein#add('rust-lang/rust.vim')
+  call dein#add('jacoborus/tender.vim')
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
 
   call dein#end()
   call dein#save_state()
@@ -289,7 +291,8 @@ syntax on
 "hi PmenuSbar ctermbg=0
 
 "カラーテーマ
-colorscheme railscasts
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme tender
 
 "補完候補の色づけ for vim7
 hi Pmenu ctermbg=255 ctermfg=0 guifg=#000000 guibg=#999999
@@ -346,6 +349,14 @@ nmap <C-n> : MBEbn<CR>
 " 前のバッファ
 nmap <C-p> : MBEbp<CR>
 
+
+
+"---------------
+" fzf
+"---------------
+
+nnoremap <C-t> : Buffers<CR>
+nnoremap <C-s> : GFiles<CR>
 
 "---------------
 " RagTag
