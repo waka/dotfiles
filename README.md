@@ -1,13 +1,3 @@
-# Install or Update
+# README
 
-```
-% ./install.sh
-```
-
-# Download vim scripts
-
-Using NeoBundle
-
-```
-:NeoBundleInstall
-```
+dotfiles置き場
